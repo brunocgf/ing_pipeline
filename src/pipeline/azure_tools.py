@@ -66,7 +66,18 @@ def transform_pl_files(blob_list, container_client, country="US"):
     return df
 
 
+def upload_df_parquet(df, name, credentials, container):
+    """
+    Upload DataFrame as parquet to Blob Storage
+    """
 
+    blob  = BlobClient.from_connection_string(credentials, container_name = container, blob_name=name)
 
+    parquet_file = io.BytesIO()
+    df.to_parquet(parquet_file, engine='pyarrow')
+    parquet_file.seek(0)
 
+    blob.upload_blob(data=parquet_file)
+
+    print("Uploded file: ", name)
 
