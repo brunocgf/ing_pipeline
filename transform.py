@@ -16,3 +16,4 @@ if __name__ == "__main__":
     # Tranform and save
     container_output = "intermidiate-ingredion"
     azure_tools.transform_pl_files(blob_list, container_input, container_output, credentials['conn_string'])
+    
