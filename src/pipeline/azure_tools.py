@@ -68,7 +68,7 @@ def transform_pl_files(blob_list, container_input, container_output, credentials
     filtered_list = list(filter(r.match, blob_list))
 
     if len(filtered_list) ==0:
-        raise ValueError("Country not founded")
+        print("Not files fouded for coutnry ", country)
 
     # filtered_list.sort()
 
