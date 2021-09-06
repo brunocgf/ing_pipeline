@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # Read credentials
     credentials = utils.load_credentials("blob_storage")
     container_input = "reports-ingredion"
-    container_output = "intermidiate-ingredion"
+    container_output = "intermediate-ingredion"
 
     if file_input is None:
          # Files in raw container
