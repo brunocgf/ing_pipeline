@@ -5,7 +5,7 @@ from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 from src.pipeline import utils, azure_tools
 
 my_parser = argparse.ArgumentParser(description="Files to upload. In None, all files are upload")
-my_parser.add_argument('--  file',
+my_parser.add_argument('--file',
 default = None)
 
 args = my_parser.parse_args()
