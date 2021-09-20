@@ -99,7 +99,9 @@ def read_transform_pl(container, credentials, country="US"):
         stream = container_client.download_blob(file)
         file = io.BytesIO()
         stream.readinto(file)
-        df_f = pd.read_parquet(file)
+        table = pq.read_table(file)
+        df_f = table.to_pandas()
+        #df_f = pd.read_parquet(file)
         df_list.append(df_f)
 
     return(pd.concat(df_list))
