@@ -206,7 +206,6 @@ dict_df['xgboost']
 features_forecast = [feat for feat in dict_df['lasso'].columns if feat.startswith('forecast_')]
 
 #   To upload data to Azure container
-connect_str = 'DefaultEndpointsProtocol=https;AccountName=storingrediondeveastus;AccountKey=hQR7K42hnJ+TKj1qzDlMVXw5gPOV9uLVBJ44WcXfU+voh+g0YHnNUmLZ8EsUylRiWIOOhnHN7gJ6oomN274ipg==;EndpointSuffix=core.windows.net'
 container_name = 'ingredion-phase-2'
 
 for modelo in models:
