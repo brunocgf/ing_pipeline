@@ -11,6 +11,8 @@ dependencies:
   - matplotlib
   - seaborn
   - jupyterlab
+  - sqlalchemy
+  - pyodbc
   - pip
   - pip:
       - azureml-core

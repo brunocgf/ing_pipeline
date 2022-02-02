@@ -3,3 +3,10 @@ src/pipeline/__pycache__/azure_tools.cpython-39.pyc
 test Brazil P&L.xlsm
 /.idea/Ingredion.iml
 /.idea/modules.xml
+/credentialsdb.yml
+/create_user.sql
+MonteCarlo.csv
+src/pipeline/__pycache__/
+d_component.csv
+.ipynb_checkpoints/
+azureml-models/
