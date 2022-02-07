@@ -40,11 +40,13 @@ container_input = "ingredion-data"
 container_client = azure_tools.get_container_client(container_input,credentials['conn_string'])
 blob_list = azure_tools.get_blob_list(container_client)
 blob_list_coun = [i for i in blob_list if "US/LE2" in i]
-params = urllib.parse.quote_plus("DRIVER={ODBC Driver 17 for SQL Server};"
-                                 "SERVER=vm-poc-dev-eastus-001.database.windows.net;"
-                                 "DATABASE=ingredion;"
-                                 "UID=admindbuser;"
-                                 "PWD=Innovative.Solutions2021")
+with open("credentialsdb.yml") as stream:
+    cred = yaml.safe_load(stream)
+params = urllib.parse.quote_plus(f"DRIVER={cred['DRIVER']};"
+                                 f"SERVER={cred['SERVER']};"
+                                 f"DATABASE={cred['DATABASE']};"
+                                 f"UID={cred['UID']};"
+                                 f"PWD={cred['PWD']}")
 #engine = sqlalchemy.create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
 for f in blob_list_coun:
 # for f in ['MEX/LE0/02-2018 MEX LE0 P&L by Customer & Product(ZBW_ZANDTM001_Q00NI).xlsm',

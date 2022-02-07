@@ -10,3 +10,4 @@ src/pipeline/__pycache__/
 d_component.csv
 .ipynb_checkpoints/
 azureml-models/
+user_test.ipynb
